@@ -8,7 +8,7 @@
         <?php wp_title("|", true, "right"); ?>
         <?php bloginfo("name"); ?>
     </title>
-    <link rel="stylesheet" href="<?php get_stylesheet_uri(); ?>">
+    <link rel="stylesheet" href="<?php get_stylesheet_uri(); ?>?ver=<?php echo date('U');">
 
     <?php wp_head(); ?>
 </head>
