@@ -1,0 +1,207 @@
+@charset "UTF-8";
+/*
+Theme Name: テーマの名前（必須）
+Theme URL: テーマのサイトのURI
+Description: テーマの説明
+Author: 作者の名前
+Version: テーマのバージョン
+Tags: テーマの特徴を表すタグ（カンマ区切り/オプション）
+License: テーマのライセンス
+License URI: テーマのライセンスのURI
+*/
+body {
+  margin: 0;
+  font-family: sans-serif;
+  line-height: 1.5;
+  color: #000;
+}
+
+/*-------------基本構造*/
+header {
+  border-bottom: 1px solid #ddd;
+  background-color: #f6f6f6;
+  padding: 0 10px;
+}
+
+footer {
+  border-top: 1px solid #ddd;
+  padding: 15px 0;
+  padding: 0 10px;
+}
+
+.container {
+  padding: 0 10px;
+}
+
+.contents {
+  padding: 30px 0 20px;
+}
+
+.sub {
+  padding: 30px 0 20px;
+}
+
+/*-------------ヘッダー*/
+.site h1 {
+  margin: 0;
+  font-size: 30px;
+  font-family: arial;
+}
+
+.site h1 a {
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px;
+  background-color: #00a0e9;
+}
+
+/*-------------フッター*/
+.copyright p {
+  margin: 0;
+  color: #666666;
+  font-size: 14px;
+}
+
+/*-------------記事の概要*/
+.gaiyou a {
+  display: block;
+  text-decoration: none;
+  color: #000000;
+  padding: 20px 0;
+  border-bottom: 2px dotted #ddd;
+}
+
+.gaiyou:hover {
+  background-color: #eee;
+}
+
+.gaiyou h1 {
+  margin: 0 0 10px;
+  font-size: 20px;
+}
+
+.gaiyou p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/*-------------記事*/
+.kiji:after {
+  content: "";
+  display: block;
+  font-size: 36px;
+}
+
+.kiji h1 {
+  margin: 0 0 10px;
+  font-size: 36px;
+}
+
+.kiji p {
+  margin: 0 0 20px;
+}
+
+.kiji .kiji-date {
+  margin-bottom: 20px;
+  color: #666666;
+  font-size: 12px;
+}
+
+/*-------------サイドバー*/
+.mymenu h2 {
+  margin: 0 0 10px;
+  border-bottom: 2px solid #ddd;
+  color: #666;
+  font-size: 18px;
+}
+
+.mymenu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mymenu li a {
+  display: block;
+  padding: 10px 5px;
+  color: #000;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.mymenu li a:hover {
+  background-color: #eee;
+}
+
+/*-------------画像*/
+.wp-caption-text {
+  margin: 0;
+  color: #666666;
+  font-size: 10px;
+  text-align: center;
+}
+
+.wp-caption-text a {
+  color: #666666;
+}
+
+.aligncenter {
+  margin: 30px auto;
+}
+
+img, .wp-caption {
+  max-width: 100%;
+  height: auto;
+}
+
+.catch {
+  margin: 30px 0;
+}
+
+@media (max-width: 599px) {
+  /*-------------記事*/
+  .kiji h1 {
+    font-size: 24px;
+  }
+  .kiji p {
+    font-size: 14px;
+  }
+  .alignleft, .alignright {
+    margin: 30px auto;
+    display: block;
+  }
+}
+
+@media (min-width: 600px) {
+  .alignleft {
+    float: left;
+    margin: 10px 30px 20px auto;
+  }
+  .alignright {
+    float: right;
+    margin: 10px auto 20px 30px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .contents {
+    width: 70%;
+    padding-right: 50px;
+    box-sizing: border-box;
+  }
+  .sub {
+    width: 30%;
+  }
+}
+
+@media (min-width: 1040px) {
+  .container, .header-inner, .footer-inner {
+    width: 1000px;
+    margin: 0 auto;
+  }
+}
