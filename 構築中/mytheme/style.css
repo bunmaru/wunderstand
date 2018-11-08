@@ -17,28 +17,30 @@ body {
 }
 
 /*-------------基本構造*/
+header, footer, .container, .sub-header {
+  padding: 0 10px;
+}
+
 header {
   border-bottom: 1px solid #ddd;
   background-color: #f6f6f6;
-  padding: 0 10px;
 }
 
 footer {
   border-top: 1px solid #ddd;
   padding: 15px 0;
-  padding: 0 10px;
 }
 
-.container {
-  padding: 0 10px;
+.sub-header {
+  padding-top: 5px;
 }
 
 .contents {
-  padding: 30px 0 20px;
+  padding: 20px 0 20px;
 }
 
 .sub {
-  padding: 30px 0 20px;
+  padding: 20px 0 20px;
 }
 
 /*-------------ヘッダー*/
@@ -106,6 +108,128 @@ footer {
   margin-bottom: 20px;
   color: #666666;
   font-size: 12px;
+}
+
+/*-------------タグ*/
+.kiji-tags {
+  margin-bottom: 18px;
+}
+
+.kiji-tags ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.kiji-tags ul:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.kiji-tags li {
+  float: left;
+  width: auto;
+}
+
+.kiji-tags li a {
+  margin: 0 5px 2px 0;
+  display: block;
+  padding: 3px 5px;
+  color: #ffffff;
+  background-color: #75dbe7;
+  border-radius: 2px;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.kiji-tags li a :hover {
+  background-color: #94ecf6;
+}
+
+/*-------------パンくずリスト*/
+.bread ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bread ol:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.bread li {
+  float: left;
+  width: auto;
+}
+
+.bread li span {
+  font-size: 14px;
+}
+
+.bread li .link-top {
+  display: inline-block;
+  text-indent: -9999px;
+}
+
+.bread li a {
+  display: inline-block;
+  padding: 5px 5px;
+  color: #888888;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.bread li a[href]:hover {
+  background-color: #eeeeee;
+}
+
+.bread li:not(:last-child):after {
+  content: "\003e";
+  margin: 0 2px;
+  color: #888888;
+}
+
+/*-------------シェアボタン*/
+.share {
+  margin-top: 40px;
+}
+
+.share ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  width: auto;
+  margin-right: 5px;
+}
+
+.share li a {
+  display: block;
+  padding: 8px 17px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 12px;
+  text-decoration: none;
+  margin-right: 5px;
+}
+
+.share li a:hover {
+  opacity: .8;
+}
+
+.share li a.share_tw {
+  background-color: #55acee;
+}
+
+.share li a.share_fb {
+  background-color: #3b5998;
+}
+
+.share li a.share_gp {
+  background-color: #dd4b39;
 }
 
 /*-------------サイドバー*/
