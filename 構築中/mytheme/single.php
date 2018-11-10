@@ -40,7 +40,7 @@
                 <?php endif;?>
             </div>
             
-            <?php if(has_post_thumbnail()): ?>
+            <?php if(has_post_thumbnail() && $page==1): ?>
             <div class="catch">
                 <?php the_post_thumbnail("large") ; ?>
             </div>
@@ -48,15 +48,23 @@
 
             <?php the_content(); ?>
 
-<div class="share">
+            <?php wp_link_pages(array(
+                'before' => '<div class="pagination"><ul><li>',
+                'separator' => '</li><li>',
+                'after' => '</li></ul></div>',
+                'pagelink' => '<span>%</span>'
+            )); ?>
 
-<ul>
-    <li><a href="" class="share_tw"><i class="fab fa-twitter"></i>twitterでシェア</a></li>
-    <li><a href="" class="share_fb"><i class="fab fa-facebook"></i>facebookでシェア</a></li>
-    <li><a href="" class="share_gp"><i class="fab fa-google-plus-square"></i>Google+ でシェア</a></li>
-</ul>
-
-</div>
+            <div class="share">
+                <ul>
+                    <li><a href="https://twitter.com/intent/tweet?text=<?php echo urlencode(get_the_title() . ' - ' . get_bloginfo('name') ); ?>&amp; url=<?php echo urlencode(get_permalink()); ?>&amp;via=ebisucom"
+                    onclick="window.open(this.href,'SNS','width=500, height=300, menubar=no, toolbar=no, scrollbars=yes'); return false;" class="share_tw"><i class="fab fa-twitter"></i><span class="spnhdn">twitter</span>でシェア</a></li>
+                    <li><a href="http://www.facebook.com/share.php?u=<?php echo urlencode( get_permalink() ); ?>"
+                onclick="window.open(this.href, 'SNS', 'width=500, height=500, menubar=no, toolbar=no, scrollbars=yes'); return false;" class="share_fb"><i class="fab fa-facebook"></i><span class="spnhdn">facebook</span>でシェア</a></li>
+                    <li><a href="https://plus.google.com/share?url=<?php echo urlencode( get_permalink() ); ?>"
+                onclick="window.open(this.href, 'SNS', 'width=500, height=500, menubar=no, toolbar=no, scrollbars=yes'); return false;" class="share_gp"><i class="fab fa-google-plus-square"></i><span class="spnhdn">Google+</span>でシェア</a></li>
+                </ul>
+            </div>
 
         </article>
     <?php endwhile; endif; ?>
