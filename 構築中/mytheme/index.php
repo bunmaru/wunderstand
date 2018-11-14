@@ -2,13 +2,18 @@
 <div class="container">
     <div class="contents">
     <?php if(have_posts()):while(have_posts()):the_post();?>
-        <article <?php post_class("gaiyou"); ?>>
-            <a href="<?php the_permalink(); ?>">
-                <h1> <?php the_title(); ?></h1>
-                <?php the_excerpt(); ?>
-            </a>
-        </article>
+        <?php get_template_part('gaiyou', 'medium'); ?>
     <?php endwhile; endif; ?>
+
+    <div class="pagination pagination-index">
+        <?php echo paginate_links(array(
+            'type' => 'list',
+            'prev_text' => '&laquo;',
+            'next_text' => '&raquo;',
+            'end_size' => '2',
+            'mid_size' => '3'
+        )); ?>
+    </div>
     </div>
     <div class="sub">
         <?php get_sidebar();?>

@@ -1,0 +1,24 @@
+{
+    "remotePath": "/themes/mytheme",
+    "host": "info.wp-x.jp",
+    "username": "wunderstand.net",
+    "password": "rlu1isawy0uf",
+    "port": 21,
+    "secure": false,
+    "protocol": "ftp",
+    "uploadOnSave": true,
+    "passive": false,
+    "debug": false,
+    "privateKeyPath": null,
+    "passphrase": null,
+    "ignore": [
+        "\\.vscode",
+        "\\.git",
+        "\\.DS_Store"
+    ],
+    "generatedFiles": {
+        "uploadOnSave": false,
+        "extensionsToInclude": [],
+        "path": ""
+    }
+}

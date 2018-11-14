@@ -74,6 +74,11 @@ footer {
   border-bottom: 2px dotted #ddd;
 }
 
+.gaiyou .gaiyou-inner {
+  display: flex;
+  justify-content: space-between;
+}
+
 .gaiyou:hover {
   background-color: #eee;
 }
@@ -86,6 +91,54 @@ footer {
 .gaiyou p {
   margin: 0;
   font-size: 14px;
+}
+
+.gaiyou .kiji-date {
+  margin-bottom: 8px;
+}
+
+.gaiyou figure {
+  margin: 0;
+  width: 200px;
+}
+
+.gaiyou .text {
+  width: calc(100% - 230px);
+}
+
+/*-------------記事の概要(大サイズ)*/
+.gaiyou-large a {
+  display: block;
+  padding: 20px 0;
+  border-bottom: 2px dotted #ddd;
+  color: #000;
+  text-decoration: none;
+}
+
+.gaiyou-large:first-child a {
+  padding-top: 0;
+}
+
+.gaiyou-large h1 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 26px;
+}
+
+.gaiyou-large p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.gaiyou-large .kiji-date {
+  margin-bottom: 8px;
+}
+
+.gaiyou-large .thumb {
+  width: 100%;
+  height: 350px;
+  background-size: cover;
+  background-position: 50% 50%;
 }
 
 /*-------------記事*/
@@ -304,6 +357,74 @@ footer {
   background-color: #efefef;
 }
 
+/*-------------カテゴリー・タグ*/
+.contents > h1 {
+  margin-top: 0;
+  font-size: 34px;
+}
+
+.pagination-index li .dots {
+  padding: 6px 2px;
+  border-color: transparent;
+  background-color: transparent;
+}
+
+/*-------------ナビゲーションメニュー*/
+.mainmenu {
+  display: none;
+}
+
+.mainmenu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mainmenu li a {
+  display: block;
+  padding: 10px 5px;
+  color: #000000;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.mainmenu li a:hover {
+  background-color: #eeeeee;
+}
+
+.header-inner {
+  position: relative;
+}
+
+#navbtn {
+  position: absolute;
+  top: 15px;
+  right: 0;
+  padding: 6px 12px;
+  border: solid 1px #aaaaaa;
+  background-color: #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#navbtn:hover {
+  background-color: #dddddd;
+}
+
+#navbtn:focus {
+  outline: none;
+}
+
+#navbtn i {
+  color: #888888;
+  font-size: 18px;
+}
+
+#navbtn span {
+  display: inline-block;
+  text-indent: -9999px;
+}
+
 /*-------------補足情報*/
 .point {
   position: relative;
@@ -373,6 +494,10 @@ footer {
 }
 
 /*-------------サイドバー*/
+.mymenu {
+  margin-bottom: 30px;
+}
+
 .mymenu h2 {
   margin: 0 0 10px;
   border-bottom: 2px solid #ddd;
@@ -396,6 +521,104 @@ footer {
 
 .mymenu li a:hover {
   background-color: #eee;
+}
+
+.mymenu-large li a {
+  position: relative;
+  margin-bottom: 10px;
+  padding: 0;
+}
+
+.mymenu-large li a:hover {
+  opacity: .8;
+}
+
+.mymenu-large li .thumb {
+  width: 100%;
+  height: 130px;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.mymenu-large li .text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 5px 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  box-sizing: border-box;
+}
+
+.mymenu-thumb li a {
+  padding: 5px 0;
+  border-bottom: 1px dotted #ddd;
+  color: #2288bb;
+}
+
+.mymenu-thumb li a:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.mymenu-thumb li a .thumb {
+  float: left;
+  width: 60px;
+  height: 60px;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.mymenu-thumb li a .text {
+  float: none;
+  width: auto;
+  margin-left: 75px;
+}
+
+.mymenu-thumb li a .text span {
+  display: block;
+  color: #666;
+  font-size: 12px;
+}
+
+/*-------------関連記事*/
+.mymenu-related {
+  margin: 40px 0 0;
+  padding: 20px;
+  border: 1px solid #ddd;
+  background-color: #f6f6f6;
+}
+
+@media (max-width: 767px) {
+  .mymenu-related {
+    padding: 10px;
+  }
+}
+
+.mymenu-related h2 {
+  padding: 0 0 0 7px;
+  border-left: 8px solid #bac6cb;
+  border-bottom: none;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.mymenu-related h2:before {
+  content: none;
+}
+
+.mymenu-related li a {
+  border: none;
+  color: #000000;
+}
+
+@media (max-width: 767px) {
+  .mymenu-related li .thumb {
+    width: 80px;
+    height: 50px;
+  }
 }
 
 /*-------------画像*/
@@ -423,7 +646,79 @@ img, .wp-caption {
   margin: 30px 0;
 }
 
+@media (min-width: 768px) {
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+  }
+  .header-inner #mainmenu {
+    display: block !important;
+  }
+  .header-inner #mainmenu ul {
+    display: flex;
+  }
+  .header-inner #mainmenu ul li a {
+    padding: 10px 15px;
+  }
+  .header-inner #navbtn {
+    display: none;
+  }
+}
+
 @media (max-width: 599px) {
+  /*-------------カテゴリー・タグ)*/
+  .contents > h1 {
+    font-size: 22px;
+  }
+  .archive .bread li:last-child {
+    text-indent: 0;
+  }
+  /*-------------記事の概要(大サイズ)*/
+  .gaiyou-large a {
+    padding: 10px 0;
+  }
+  .gaiyou-large h1 {
+    font-size: 18px;
+  }
+  .gaiyou-large p {
+    font-size: 12px;
+  }
+  .gaiyou-large .kiji-date {
+    margin-bottom: 8px;
+  }
+  .gaiyou-large .thumb {
+    height: 200px;
+  }
+  .pagination-index ul li:first-child a,
+  .pagination-index ul li:first-child > spam {
+    border-left: solid 1px #cccccc;
+  }
+  .pagination-index ul li a,
+  .pagination-index ul li > span {
+    margin: 0;
+    padding: 6px 7px;
+    border-left: none;
+    font-size: 12px;
+  }
+  .pagination-index ul li .dots {
+    border-right-color: #cccccc;
+  }
+  .gaiyou a {
+    padding: 10px;
+  }
+  .gaiyou figure {
+    width: 100px;
+  }
+  .gaiyou .text {
+    width: calc(100% - 110px);
+  }
+  .gaiyou h1 {
+    font-size: 16px;
+  }
+  .gaiyou p {
+    visibility: hidden;
+    height: 0;
+  }
   /*-------------記事*/
   .kiji h1 {
     font-size: 24px;

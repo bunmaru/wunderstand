@@ -36,11 +36,50 @@ function editor_setting($init) {
 }
 add_filter('tiny_mce_before_init', 'editor_setting');
 
-
-
 //スタイルメニューを有効化
 function add_stylemenu( $buttons ){
 	array_splice( $buttons, 1, 0, 'styleselect' );
 	return $buttons;
 }
 add_filter( 'mce_buttons_2', 'add_stylemenu' );
+
+//サムネイル画像
+function mythumb($size){
+	if (has_post_thumbnail()){
+		$postthumb = wp_get_attachment_image_src(get_post_thumbnail_id(), $size);
+		$url = $postthumb[0];
+	}else{
+		$url = get_template_directory_uri() .  '/picnic.jpg';
+	}
+	return $url;
+}
+
+//カスタムメニュー
+register_nav_menu('sitenav', 'サイトナビゲーション');
+register_nav_menu('pickupnav', 'お勧め記事');
+
+//トグルボタン
+function navbtn_scripts(){
+	wp_enqueue_script('navbtn-script', get_template_directory_uri() . '/navbtn.js', array('jquery'));
+}
+add_action('wp_enqueue_scripts', 'navbtn_scripts');
+
+//前後記事に関するメタデータの出力を禁止(firefox先読みによるカウント増加防止)
+remove_action('wp_head', 'adjacent_posts_rel_link_wp_head()',10,0);
+
+//botのアクセスを判別
+function is_bot(){
+	$ua = $_SERVER['HTTP_USER_AGENT'];
+
+	$bots = array(
+		"googlebot",
+		"mshost",
+		"yahoo"
+	);
+	foreach($bots as $bot){
+		if(strpos($ua, $bot) !== false){
+			return true;
+		}
+	}
+	return false;
+}
