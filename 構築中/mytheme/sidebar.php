@@ -1,3 +1,4 @@
+<?php dynamic_sidebar('ad');　?>
 <?php 
 $location_name = 'pickupnav';
 $locations = get_nav_menu_locations();
@@ -53,3 +54,5 @@ if($myposts): ?>
 </aside>
 <?php wp_reset_postdata();
 endif;?>
+
+<?php dynamic_sidebar('submenu');

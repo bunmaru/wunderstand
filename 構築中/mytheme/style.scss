@@ -13,16 +13,16 @@ License URI: テーマのライセンスのURI
 // @import url(grid-blognews.css);
 
 $pc: 1024px; // PC
-$tab: 680px; // タブレット
-$sp: 767px;  // スマホ
+$tab: 767px; // タブレット
+$sp: 599px;  // スマホ
 
 @mixin pc {
   @media (max-width: ($pc)) {
     @content;
   }
 }
-@mixin tab {
-  @media (max-width: ($tab)) {
+@mixin tb {
+  @media (min-width: ($tab)) {
     @content;
   }
 }
@@ -578,9 +578,7 @@ footer{
     padding: 20px;
     border: 1px solid #ddd;
     background-color: #f6f6f6;
-    @include sp{
-        padding: 10px;
-    }
+  
     h2{
         padding: 0 0 0 7px;
         border-left: 8px solid #bac6cb;
@@ -597,17 +595,48 @@ footer{
             color: #000000;
         }
 
-        .thumb{
-
-            @include sp{
-                width: 80px;
-                height: 50px;
+    }
+    @include sp{
+        padding: 10px;
+        li{
+            a{
+                .thumb{
+                    width: 80px;
+                    height: 50px;
+                }
+                .text{
+                    margin-left: 95px;
+                }
             }
 
         }
+    }   
+    @include tb{
+        ul{
+            display: flex;
+            &:after{
+                content: "";
+                display: block;
+                clear: both;
+            }
+            li{
+                width: 25%;
+                padding: 0 5px;
+                box-sizing: border-box;
+                .thumb{
+                    width: 100%;
+                    height: 80px;
+                    margin-bottom: 5px;
+                }
+                .text{
+                    margin-left: 0;
+                }
+            }
+        }
     }
-}   
 
+    
+}   
 
 
 /*-------------画像*/
@@ -656,6 +685,37 @@ img, .wp-caption{
         }
     }
 
+}
+
+/*-------------ウィジェット)*/
+/*------検索フォーム*/
+#s{
+    width: 100%;
+    height: 44px;
+    padding: 5px;
+    border-radius: 0;
+    background-image: none;
+    font-family: inherit;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+.screen-reader-text,#searchsubmit{
+    display: block;
+    visibility: hidden;
+    height: 0;
+}
+/*------タグクラウド*/
+.tagcloud{
+    a{
+        display: inline-block;
+        color: #2288bb;
+        text-decoration: none;
+        font-weight: normal;
+    }
+}
+/*------広告*/
+.myad{
+    text-align: center;
 }
 
 @media(max-width:599px){
@@ -772,12 +832,13 @@ img, .wp-caption{
     }
 
     .contents{
-        width: 70%;
-        padding-right: 50px;
+        width: 100%;
+        margin-right: -500px;
+        padding-right: 350px;
         box-sizing: border-box;
     }
     .sub{
-        width: 30%;
+        width: 300px;
     }
 
 }

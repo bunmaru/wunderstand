@@ -591,12 +591,6 @@ footer {
   background-color: #f6f6f6;
 }
 
-@media (max-width: 767px) {
-  .mymenu-related {
-    padding: 10px;
-  }
-}
-
 .mymenu-related h2 {
   padding: 0 0 0 7px;
   border-left: 8px solid #bac6cb;
@@ -614,10 +608,40 @@ footer {
   color: #000000;
 }
 
-@media (max-width: 767px) {
-  .mymenu-related li .thumb {
+@media (max-width: 599px) {
+  .mymenu-related {
+    padding: 10px;
+  }
+  .mymenu-related li a .thumb {
     width: 80px;
     height: 50px;
+  }
+  .mymenu-related li a .text {
+    margin-left: 95px;
+  }
+}
+
+@media (min-width: 767px) {
+  .mymenu-related ul {
+    display: flex;
+  }
+  .mymenu-related ul:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .mymenu-related ul li {
+    width: 25%;
+    padding: 0 5px;
+    box-sizing: border-box;
+  }
+  .mymenu-related ul li .thumb {
+    width: 100%;
+    height: 80px;
+    margin-bottom: 5px;
+  }
+  .mymenu-related ul li .text {
+    margin-left: 0;
   }
 }
 
@@ -663,6 +687,38 @@ img, .wp-caption {
   .header-inner #navbtn {
     display: none;
   }
+}
+
+/*-------------ウィジェット)*/
+/*------検索フォーム*/
+#s {
+  width: 100%;
+  height: 44px;
+  padding: 5px;
+  border-radius: 0;
+  background-image: none;
+  font-family: inherit;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.screen-reader-text, #searchsubmit {
+  display: block;
+  visibility: hidden;
+  height: 0;
+}
+
+/*------タグクラウド*/
+.tagcloud a {
+  display: inline-block;
+  color: #2288bb;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+/*------広告*/
+.myad {
+  text-align: center;
 }
 
 @media (max-width: 599px) {
@@ -763,12 +819,13 @@ img, .wp-caption {
     justify-content: space-between;
   }
   .contents {
-    width: 70%;
-    padding-right: 50px;
+    width: 100%;
+    margin-right: -500px;
+    padding-right: 350px;
     box-sizing: border-box;
   }
   .sub {
-    width: 30%;
+    width: 300px;
   }
 }
 
