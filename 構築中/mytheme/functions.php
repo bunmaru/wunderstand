@@ -106,3 +106,10 @@ register_sidebar(array(
 
 //html5対応
 add_theme_support('html5',array('serach-form'));
+
+//ヘッダー画像
+add_theme_support('custom-header',array(
+	'width' => 1000,
+	'height' => 300,
+	'header-text' => false,
+));

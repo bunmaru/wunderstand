@@ -1,8 +1,8 @@
 {
-    "remotePath": "/themes/mytheme",
+    "remotePath": "/wp-content/themes/mytheme",
     "host": "info.wp-x.jp",
     "username": "wunderstand.net",
-    "password": "rlu1isawy0uf",
+    "password": "hasita99",
     "port": 21,
     "secure": false,
     "protocol": "ftp",

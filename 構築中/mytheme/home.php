@@ -1,5 +1,14 @@
 <?php get_header(); ?>
 <div class="container">
+
+<?php if(get_header_image()): ?>
+<div class="hello">
+    <div class="hello-img" style="background-image:url( <?php header_image(); ?> )"></div>
+    <div class="hello-text">
+        <?php bloginfo('description'); ?>
+    </div>
+</div>
+<?php endif; ?>
     <div class="contents">
     <?php if(have_posts()): the_post();?>
         <?php get_template_part('gaiyou', 'large'); ?>
